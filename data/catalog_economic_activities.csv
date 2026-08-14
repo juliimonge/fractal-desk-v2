@@ -1,0 +1,50 @@
+# Economic activity codes (CodigoActividad) — versioned reference data
+#
+# CATALOGUE VERSION: 2026.08.07-placeholder
+# STATUS: SYNTHETIC PLACEHOLDERS. THESE ARE NOT REAL HACIENDA ACTIVITY CODES.
+#
+# ---------------------------------------------------------------------------
+# READ THIS BEFORE USING ANY CODE BELOW.
+# ---------------------------------------------------------------------------
+# Costa Rica's economic activity codes are six digits, derived from CIIU rev. 4,
+# and each taxpayer is registered against one or more of them. The real list is
+# maintained by the Dirección General de Tributación and is visible per taxpayer
+# in their registration record.
+#
+# The codes in this file are NOT that list. They are placeholders invented for
+# this repo. They have the correct SHAPE — six digits, sector-grouped by the
+# leading digits — so that the "activity code is present and well-formed"
+# validation rule is exercised honestly. They have no real-world meaning, and
+# every one of them is deliberately allocated in the 9xxxxx range so that a code
+# from this file can be spotted at a glance and never mistaken for a registered
+# activity.
+#
+# The four sectors mirror the client mix described in CASE_STUDY.md: real
+# estate, construction, hospitality and professional services.
+#
+# TODO(replace): swap this file for Hacienda's real activity catalogue before
+# this repo touches anything other than synthetic data. The validation rule
+# V007 (activity code in catalogue) is a WARNING rather than an ERROR precisely
+# because this catalogue is a placeholder.
+#
+# COLUMNS
+#   activity_code   Six-digit placeholder code
+#   sector          Sector grouping used by the synthetic generator
+#   description     Human label
+#   is_placeholder  Always true in this file
+activity_code,sector,description,is_placeholder
+910100,real_estate,Corretaje de bienes inmuebles (placeholder),true
+910200,real_estate,Administración de propiedades (placeholder),true
+910300,real_estate,Alquiler de inmuebles propios (placeholder),true
+920100,construction,Construcción de edificios residenciales (placeholder),true
+920200,construction,Obra civil y movimiento de tierra (placeholder),true
+920300,construction,Instalaciones eléctricas y mecánicas (placeholder),true
+930100,hospitality,Servicios de hospedaje (placeholder),true
+930200,hospitality,Servicios de alimentación y bebidas (placeholder),true
+930300,hospitality,Operación de tours y actividades (placeholder),true
+940100,professional_services,Servicios legales (placeholder),true
+940200,professional_services,Servicios contables y de auditoría (placeholder),true
+940300,professional_services,Consultoría de gestión (placeholder),true
+940400,professional_services,Servicios de arquitectura e ingeniería (placeholder),true
+950100,other,Comercio al por menor (placeholder),true
+950200,other,Transporte de carga (placeholder),true

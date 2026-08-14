@@ -1,0 +1,50 @@
+# Units of measure (UnidadMedida) — versioned reference data
+#
+# CATALOGUE VERSION: 2026.08.07-subset
+# STATUS: ILLUSTRATIVE SUBSET. NOT THE OFFICIAL CATALOGUE.
+#
+# The authoritative list of units of measure is published by the Dirección
+# General de Tributación as an annex to the electronic-receipt resolution
+# (version 4.4 — Resolución MH-DGT-RES-0027-2024 and its annexes). That list is
+# considerably longer than this one and is versioned by Hacienda independently
+# of this repo.
+#
+# What is here is a working subset chosen to cover the synthetic document mix:
+# services, goods sold by count, weight, volume, length and time. It is enough
+# to exercise the "unit of measure is in the catalogue" validation rule against
+# synthetic data. It is NOT enough to validate a real document — a real document
+# using a legitimate unit absent from this subset would be flagged as invalid.
+#
+# Before any use beyond synthetic data: replace this file wholesale with the
+# current Hacienda annex and bump CATALOGUE VERSION.
+#
+# COLUMNS
+#   code          The symbol carried in the UnidadMedida element
+#   description   Spanish description
+#   kind          service | count | mass | volume | length | area | time | other
+unit_code,description,kind
+Sp,Servicios Profesionales,service
+Spe,Servicios Personales,service
+St,Servicios Técnicos,service
+Unid,Unidad,count
+Al,Alquiler de uso habitacional,service
+Alc,Alquiler de uso comercial,service
+Os,Otros tipos de servicio,service
+Oth,Otras unidades,other
+m,Metro,length
+km,Kilómetro,length
+cm,Centímetro,length
+mm,Milímetro,length
+m2,Metro cuadrado,area
+ha,Hectárea,area
+m3,Metro cúbico,volume
+L,Litro,volume
+ml,Mililitro,volume
+gal,Galón,volume
+kg,Kilogramo,mass
+g,Gramo,mass
+t,Tonelada,mass
+lb,Libra,mass
+h,Hora,time
+min,Minuto,time
+d,Día,time

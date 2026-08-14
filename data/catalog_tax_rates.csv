@@ -1,0 +1,38 @@
+# IVA rate codes (CodigoTarifaIVA / Tarifa) — versioned reference data
+#
+# CATALOGUE VERSION: 2026.08.07-subset
+# STATUS: ILLUSTRATIVE SUBSET. NOT THE OFFICIAL CATALOGUE.
+#
+# The authoritative rate-code table is an annex to the electronic-receipt
+# resolution for version 4.4 (Resolución MH-DGT-RES-0027-2024). Costa Rica's IVA
+# has a 13% general rate plus several reduced and transitional rates, each
+# carrying its own code. Reduced rates attach to specific goods and services
+# (health services, private education, basic-basket goods, construction inputs,
+# and so on) and the mapping from product to rate is decided by the CABYS code,
+# not by this file.
+#
+# This subset exists so the validation layer can answer one narrow question:
+# "is the rate code on this synthetic line a code the catalogue knows about, and
+# does the stated percentage match that code?" It does NOT encode which rate a
+# given product is entitled to. Do not use it to decide what to charge.
+#
+# TODO(verify): reconcile every row against the current v4.4 annex before this
+# repo is used for anything other than synthetic data.
+#
+# COLUMNS
+#   rate_code       Two-digit code as carried in the XML
+#   rate_percent    Percentage the code represents
+#   description     Spanish description
+#   grants_credit   true if IVA at this code is creditable by the receiver
+rate_code,rate_percent,description,grants_credit
+01,0.00,Tarifa 0% (exento),false
+02,1.00,Tarifa reducida 1%,true
+03,2.00,Tarifa reducida 2%,true
+04,4.00,Tarifa reducida 4%,true
+05,0.00,Transitorio 0%,false
+06,4.00,Transitorio 4%,true
+07,8.00,Transitorio 8%,true
+08,13.00,Tarifa general 13%,true
+09,0.50,Tarifa reducida 0.5%,true
+10,0.00,Tarifa exenta,false
+11,0.00,Tarifa 0% sin derecho a crédito,false

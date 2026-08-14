@@ -1,0 +1,19 @@
+# fractal-desk-v2 — pinned dependencies
+#
+# Pinned exactly, not floored. This project's claim is that a clone reproduces
+# the numbers in the README, and a floating dependency undermines that the first
+# time an upstream default changes.
+#
+# Verified working on Python 3.13.5 / macOS (Darwin arm64), 2026-08-07.
+# Requires Python >= 3.11.
+#
+# Nothing here is a cloud client, and nothing here can sign or transmit an
+# electronic document. lxml is present so the mock submission layer produces
+# parseable XML; it is a parser, not a signer.
+
+duckdb==1.5.5
+streamlit==1.61.1
+altair==6.2.2
+pandas==3.0.5
+lxml==6.1.1
+pytest==9.1.1

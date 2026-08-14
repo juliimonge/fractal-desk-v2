@@ -1,0 +1,32 @@
+# Electronic document types (TipoDocumento) — versioned reference data
+#
+# CATALOGUE VERSION: 2026.08.07
+# STATUS: structurally accurate for v4.4; verify codes against the current annex.
+#
+# The two-digit type code appears twice in every document: inside positions
+# 9..10 of the 20-digit consecutivo, and as its own element. The validation
+# layer checks the two agree.
+#
+# enters_acceptance_workflow marks the types that, when RECEIVED, must be
+# answered with a confirmation message (aceptación / aceptación parcial /
+# rechazo) inside the statutory window. This flag is what the deadline engine
+# keys on: a tiquete electrónico is issued to a final consumer and carries no
+# receiver confirmation obligation, so it never generates a deadline.
+#
+# TODO(verify): confirm the v4.4 type list, in particular the treatment of
+# recibo electrónico de pago (10), against the current Hacienda annex.
+#
+# COLUMNS
+#   type_code                     Two-digit code
+#   name_es / name_en             Names
+#   requires_receiver             true if a receptor block is mandatory
+#   enters_acceptance_workflow    true if receiving one starts an acceptance clock
+#   credit_sign                   +1 increases IVA credit, -1 reduces it, 0 neutral
+type_code,name_es,name_en,requires_receiver,enters_acceptance_workflow,credit_sign
+01,Factura electrónica,Electronic invoice,true,true,1
+02,Nota de débito electrónica,Electronic debit note,true,true,1
+03,Nota de crédito electrónica,Electronic credit note,true,true,-1
+04,Tiquete electrónico,Electronic ticket,false,false,0
+08,Factura electrónica de compra,Electronic purchase invoice,true,false,1
+09,Factura electrónica de exportación,Electronic export invoice,true,false,0
+10,Recibo electrónico de pago,Electronic payment receipt,true,false,0

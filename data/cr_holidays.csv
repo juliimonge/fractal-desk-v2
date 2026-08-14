@@ -1,0 +1,77 @@
+# Costa Rican national public holidays (feriados nacionales) — versioned reference data
+#
+# CALENDAR VERSION: 2026.08.07
+# COVERAGE:         2025-01-01 .. 2027-12-31
+# VERIFIED AS OF:   2026-08-07
+#
+# ---------------------------------------------------------------------------
+# THIS FILE NEEDS MAINTAINING. READ BEFORE TRUSTING IT.
+# ---------------------------------------------------------------------------
+# 1. Costa Rican holidays are not stable across years. The Legislative Assembly
+#    has repeatedly changed both the list and the observance rule. Between 2020
+#    and 2024 several holidays were shifted to the nearest Monday to create long
+#    weekends for tourism (the "traslado de feriados"). That measure was allowed
+#    to lapse: for 2025, 2026 and 2027 every holiday is observed on its natural
+#    date, with no Monday transfers. If the traslado is reinstated, the dates
+#    below become wrong and this file MUST be reissued.
+# 2. Coverage is hard-bounded. The business-day engine raises
+#    CalendarCoverageError rather than silently assuming a year has no holidays.
+#    Extend this file before processing documents outside the coverage window.
+# 3. Jueves Santo and Viernes Santo are moveable (they track Easter). They are
+#    listed explicitly here rather than computed, so that the calendar the engine
+#    used is auditable after the fact. moveable=true marks them.
+# 4. pay_type distinguishes feriado de pago obligatorio from pago NO obligatorio.
+#    Both are national holidays; the difference is a labour-law payment rule, not
+#    a statement about whether offices are open. See observed_as_non_business and
+#    REGULATORY_NOTES.md section "Which days are días hábiles" for how the engine
+#    treats them and how to change it.
+# 5. Sources consulted are recorded in REGULATORY_NOTES.md. This is reference
+#    data assembled for a synthetic-data project, not an official publication.
+#
+# ---------------------------------------------------------------------------
+# COLUMNS
+#   holiday_date            ISO date (YYYY-MM-DD)
+#   name_es                 Official Spanish name
+#   name_en                 English gloss (for the dashboard)
+#   pay_type                obligatorio | no_obligatorio
+#   moveable                true if the date tracks Easter and changes each year
+#   observed_as_non_business true if the engine excludes it from días hábiles
+#   note                    free text
+# ---------------------------------------------------------------------------
+holiday_date,name_es,name_en,pay_type,moveable,observed_as_non_business,note
+2025-01-01,Año Nuevo,New Year's Day,obligatorio,false,true,
+2025-04-11,Día de Juan Santamaría,Juan Santamaría Day,obligatorio,false,true,Observed on natural date; no traslado in 2025
+2025-04-17,Jueves Santo,Maundy Thursday,obligatorio,true,true,Easter 2025-04-20
+2025-04-18,Viernes Santo,Good Friday,obligatorio,true,true,Easter 2025-04-20
+2025-05-01,Día Internacional del Trabajo,International Workers' Day,obligatorio,false,true,
+2025-07-25,Anexión del Partido de Nicoya,Annexation of Nicoya,obligatorio,false,true,
+2025-08-02,Día de la Virgen de los Ángeles,Our Lady of the Angels,no_obligatorio,false,true,Falls on a Saturday in 2025
+2025-08-15,Día de la Madre,Mother's Day,obligatorio,false,true,
+2025-08-31,Día de la Persona Negra y la Cultura Afrocostarricense,Black Person and Afro-Costa Rican Culture Day,no_obligatorio,false,true,Falls on a Sunday in 2025
+2025-09-15,Día de la Independencia,Independence Day,obligatorio,false,true,
+2025-12-01,Día de la Abolición del Ejército,Abolition of the Army Day,no_obligatorio,false,true,
+2025-12-25,Navidad,Christmas Day,obligatorio,false,true,
+2026-01-01,Año Nuevo,New Year's Day,obligatorio,false,true,
+2026-04-02,Jueves Santo,Maundy Thursday,obligatorio,true,true,Easter 2026-04-05
+2026-04-03,Viernes Santo,Good Friday,obligatorio,true,true,Easter 2026-04-05
+2026-04-11,Día de Juan Santamaría,Juan Santamaría Day,obligatorio,false,true,Falls on a Saturday in 2026
+2026-05-01,Día Internacional del Trabajo,International Workers' Day,obligatorio,false,true,
+2026-07-25,Anexión del Partido de Nicoya,Annexation of Nicoya,obligatorio,false,true,Falls on a Saturday in 2026
+2026-08-02,Día de la Virgen de los Ángeles,Our Lady of the Angels,no_obligatorio,false,true,Falls on a Sunday in 2026
+2026-08-15,Día de la Madre,Mother's Day,obligatorio,false,true,Falls on a Saturday in 2026
+2026-08-31,Día de la Persona Negra y la Cultura Afrocostarricense,Black Person and Afro-Costa Rican Culture Day,no_obligatorio,false,true,
+2026-09-15,Día de la Independencia,Independence Day,obligatorio,false,true,
+2026-12-01,Día de la Abolición del Ejército,Abolition of the Army Day,no_obligatorio,false,true,
+2026-12-25,Navidad,Christmas Day,obligatorio,false,true,
+2027-01-01,Año Nuevo,New Year's Day,obligatorio,false,true,
+2027-03-25,Jueves Santo,Maundy Thursday,obligatorio,true,true,Easter 2027-03-28
+2027-03-26,Viernes Santo,Good Friday,obligatorio,true,true,Easter 2027-03-28
+2027-04-11,Día de Juan Santamaría,Juan Santamaría Day,obligatorio,false,true,Falls on a Sunday in 2027
+2027-05-01,Día Internacional del Trabajo,International Workers' Day,obligatorio,false,true,Falls on a Saturday in 2027
+2027-07-25,Anexión del Partido de Nicoya,Annexation of Nicoya,obligatorio,false,true,Falls on a Sunday in 2027
+2027-08-02,Día de la Virgen de los Ángeles,Our Lady of the Angels,no_obligatorio,false,true,
+2027-08-15,Día de la Madre,Mother's Day,obligatorio,false,true,Falls on a Sunday in 2027
+2027-08-31,Día de la Persona Negra y la Cultura Afrocostarricense,Black Person and Afro-Costa Rican Culture Day,no_obligatorio,false,true,
+2027-09-15,Día de la Independencia,Independence Day,obligatorio,false,true,
+2027-12-01,Día de la Abolición del Ejército,Abolition of the Army Day,no_obligatorio,false,true,
+2027-12-25,Navidad,Christmas Day,obligatorio,false,true,Falls on a Saturday in 2027
